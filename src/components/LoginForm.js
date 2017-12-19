@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Text, StyleSheet } from 'react-native';
 
-import * as actions from '../actions';
+import { authActions  } from '../actions';
 import { Card, Input, Button, CardItem, Spinner } from '../common';
+
 class LoginForm extends Component{
     onEmailChange(text){
          this.props.emailTextChanged(text);
@@ -72,4 +73,4 @@ const styles = StyleSheet.create({
      }
 })
 
-export default connect(mapStateToProps,actions)(LoginForm)
+export default connect(mapStateToProps,authActions)(LoginForm)

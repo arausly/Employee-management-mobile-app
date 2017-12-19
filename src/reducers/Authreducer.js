@@ -1,6 +1,12 @@
 import * as actions from '../actions/types';
 
-const INITIAL_STATE = { email:'', password:'', loading:false, error:'', user:null };
+const INITIAL_STATE = {
+   email:'', 
+   password:'',
+   loading:false, 
+   error:'', 
+   user:null 
+};
 
 export default (state = INITIAL_STATE, action)=>{
   switch(action.type){
