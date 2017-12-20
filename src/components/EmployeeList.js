@@ -1,19 +1,31 @@
 import React,{Component} from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ListView } from 'react-native';
+import firebase from 'firebase';
+import { connect } from 'react-redux';
+import { employeeFetch } from '../actions';
+
+
 
 class EmployeeList extends Component{
     render(){
         return(
-            <View>
-               <Text>This should display</Text>
-               <Text>This should display</Text>
-               <Text>This should display</Text>
-               <Text>This should display</Text>
-               <Text>This should display</Text>
-               <Text>This should display</Text>
-            </View>
+          <View>
+              <Text> Display dummy text for now</Text>
+              <Text> Display dummy text for now</Text>
+              <Text> Display dummy text for now</Text>
+              <Text> Display dummy text for now</Text>              
+              <Text> Display dummy text for now</Text>              
+              <Text> Display dummy text for now</Text>              
+              <Text> Display dummy text for now</Text>              
+              <Text> Display dummy text for now</Text>              
+              
+          </View>
         );
     }
 }
 
-export default EmployeeList;
+const mapStateToProps =(state)=>{
+      employees: state.employees
+}
+
+export default connect(null, { employeeFetch })(EmployeeList);

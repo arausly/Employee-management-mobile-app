@@ -34,8 +34,7 @@ const loginUserSuccess = (dispatch, user)=>{
        type:action.LOGIN_USER_SUCCESS,
        payload:user
    })
-   //employeeList from my key in Scene component
-   Actions.employeeList();
+   Actions.main();
 }
 
 

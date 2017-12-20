@@ -17,14 +17,11 @@ const RouterComponent = ()=>{
            onRight= {()=> Actions.employeeCreate()}
            key="employeeList" 
            component={EmployeeList} 
-           title="Employee List" 
-          /> 
+           title="Employees" 
+           initial
+          />
+          <Scene title="Create Employees" key="employeeCreate" component={EmployeeCreate} /> 
         </Scene>
-        <Scene 
-           key="employeeCreate" 
-           component={EmployeeCreate} 
-           title="Create Employee"
-        />
         </Router>
     );
 }

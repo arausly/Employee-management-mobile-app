@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Text, StyleSheet } from 'react-native';
 
-import { authActions  } from '../actions';
+import { emailTextChanged, passwordChanged, onPressButton } from '../actions';
 import { Card, Input, Button, CardItem, Spinner } from '../common';
 
 class LoginForm extends Component{
@@ -73,4 +73,8 @@ const styles = StyleSheet.create({
      }
 })
 
-export default connect(mapStateToProps,authActions)(LoginForm)
+export default connect(mapStateToProps,{
+    onPressButton,
+    emailTextChanged,
+    passwordChanged
+})(LoginForm)

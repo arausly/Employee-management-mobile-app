@@ -16,6 +16,9 @@ export default (state=INTIAL_STATE,action)=>{
               [action.payload.prop]: action.payload.value,
           }
        break;
+       case actions.CLEAR_EMPLOYEE_FORM:
+         return INTIAL_STATE;
+       break;
        default:
          return state;
        break;
