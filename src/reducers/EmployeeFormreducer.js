@@ -19,6 +19,9 @@ export default (state=INTIAL_STATE,action)=>{
        case actions.CLEAR_EMPLOYEE_FORM:
          return INTIAL_STATE;
        break;
+       case actions.EMPLOYEE_SAVED:
+        return INTIAL_STATE;
+       break;
        default:
          return state;
        break;
