@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {Card, CardItem, Button, Input } from '../common';
-import { Picker, Text, StyleSheet } from 'react-native';
-
 import { connect } from 'react-redux';
+
+import {Card, CardItem, Button } from '../common';
 import { employeeUpdate, employeeCreate } from '../actions';
+import EmployeeForm from './EmployeeForm';
 
 class EmployeeCreate extends Component{
     onButtonPress(){
@@ -13,38 +13,7 @@ class EmployeeCreate extends Component{
     render(){
         return(
               <Card>
-                  <CardItem>
-                    <Input
-                     label="Name"
-                     textFill="Daniel"
-                     autoFocus
-                     onChangeText={name => this.props.employeeUpdate({prop:'name',value:name})}
-                     value={this.props.name}
-                     />
-                  </CardItem>
-                  <CardItem>
-                      <Input 
-                      label="Phone"
-                      textFill="000-111-222"
-                      onChangeText={phone => this.props.employeeUpdate({prop:'phone', value:phone })}
-                      value={this.props.phone}
-                      />
-                  </CardItem>
-                  <CardItem style={{flexDirection:'column'}}>
-                      <Text style={styles.pickerLabelStyle}>Shift</Text>
-                      <Picker
-                         selectedValue={this.props.shift}
-                         onValueChange={day=>this.props.employeeUpdate({prop:'shift',value:day})}
-                      >
-                        <Picker.Item label="Monday" value="Monday" />
-                        <Picker.Item label="Tuesday" value="Tuesday" />
-                        <Picker.Item label="Wednesday" value="Wednesday" />
-                        <Picker.Item label="Thursday" value="Thursday" />
-                        <Picker.Item label="Friday" value="Friday" />
-                        <Picker.Item label="Saturday" value="Saturday" />
-                        <Picker.Item label="Sunday" value="Sunday" />
-                      </Picker>
-                  </CardItem>
+                <EmployeeForm {...this.props}/>
                   <CardItem>
                       <Button onPress={this.onButtonPress.bind(this)}>Create</Button>
                   </CardItem>
